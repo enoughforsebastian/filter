@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#5b0714" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>#ENOughforSebastian Wedding Frame</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="eyebrow">Wedding photo frame</div>
+      <h1>#ENOughforSebastian</h1>
+      <p>Create a framed Story photo directly on your phone. Your photo stays on your device.</p>
+    </header>
+
+    <section class="stage-wrap" aria-label="Photo editor">
+      <canvas id="canvas" width="1080" height="1920"></canvas>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">♡</div>
+        <strong>Add a photo</strong>
+        <span>Then drag to move and pinch to zoom.</span>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="button-row">
+        <label class="button primary">
+          <input id="cameraInput" type="file" accept="image/*" capture="environment" hidden />
+          Take Photo
+        </label>
+        <label class="button secondary">
+          <input id="galleryInput" type="file" accept="image/*" hidden />
+          Choose Photo
+        </label>
+      </div>
+
+      <div id="editControls" class="edit-controls" hidden>
+        <label class="slider-label" for="zoom">Zoom</label>
+        <input id="zoom" type="range" min="1" max="4" step="0.01" value="1" />
+        <div class="button-row compact">
+          <button id="resetBtn" class="button ghost" type="button">Reset</button>
+          <button id="saveBtn" class="button primary" type="button">Save Photo</button>
+          <button id="shareBtn" class="button secondary" type="button">Share</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>Output: 1080 × 1920 px · 9:16</span>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
